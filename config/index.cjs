@@ -94,7 +94,7 @@ const USER_CONFIG = {
           type: '节日', name: '距离元旦还有', year: '2021', date: '01-01',
         },
         {
-          type: '*节日', name: '距离除夕还有', year: '2022', date: '12-30',
+          type: '*节日', name: '距离除夕还有', year: '2021', date: '12-29',
         },
         {
           type: '节日', name: '距离情人节还有', year: '2021', date: '02-14',
