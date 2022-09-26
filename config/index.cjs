@@ -88,16 +88,16 @@ const USER_CONFIG = {
           type: '节日', name: '纪念日', year: '2021', date: '08-25',
         },
         {
-          type: '*节日', name: '距离中秋节还有', year: '2020', date: '08-15',
+          type: '*节日', name: '中秋节还有', year: '2020', date: '08-15',
         },
         {
-          type: '节日', name: '距离元旦还有', year: '2021', date: '01-01',
+          type: '节日', name: '元旦还有', year: '2021', date: '01-01',
         },
         {
-          type: '*节日', name: '距离除夕还有', year: '2021', date: '12-29',
+          type: '*节日', name: '除夕还有', year: '2021', date: '12-29',
         },
         {
-          type: '节日', name: '距离情人节还有', year: '2021', date: '02-14',
+          type: '节日', name: '情人节还有', year: '2021', date: '02-14',
         },
         // 注意：此条配置日期为阳历日期，因为`type`中 “生日” 之前没有 * 符号
         {
