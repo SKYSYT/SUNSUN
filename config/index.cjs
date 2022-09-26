@@ -7,12 +7,12 @@ const USER_CONFIG = {
   // 公众号APP_ID
   // 建议不要填这里，请使用文档中github secret的方法进行保密配置，保护您的隐私安全。
   // 如果你非要填这里也行。脚本也能运行
-  APP_ID: '',
+  APP_ID: 'wx15cf60a334db82f1',
 
   // 公众号APP_SECRET
   // 建议不要填这里，请使用文档中github secret的方法进行保密配置，保护您的隐私安全。
   // 如果你非要填这里也行。脚本也能运行
-  APP_SECRET: '',
+  APP_SECRET: 'de3c484437e3a8eeef7bd96d04a744ee',
 
   // 是否给文字设置多彩颜色, 和emoji不兼容
   // 如果您使用了微信测试号的模板中含有emoji表情，请填 false
@@ -25,11 +25,11 @@ const USER_CONFIG = {
 
     /** 节假日 */
     // 下一休息日综合提醒
-    holidaytts: true,
+    holidaytts: false,
 
     /** 每日N句 */
     // 金山每日一句
-    CIBA: true,
+    CIBA: false,
     // 每日一言
     oneTalk: false,
     // 土味情话(彩虹屁)
@@ -45,7 +45,7 @@ const USER_CONFIG = {
     horoscope: false,
 
     /** 生日消息和节日消息 */
-    birthdayMessage: true,
+    birthdayMessage: false,
 
     // 学生课表
     courseSchedule: false,
@@ -63,46 +63,58 @@ const USER_CONFIG = {
   USERS: [
     {
       // 想要发送的人的名字
-      name: '老婆0',
+      name: '小媳妇',
       // 扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: '',
+      id: 'oDoGd56mLLw8k0DVojPXHH7JVTyM',
       // 你想对他发送的模板消息的模板ID
-      useTemplateId: '',
+      useTemplateId: 'LGlvjq5CPlbZK6mukVLvb1Qvl3h2i7P5qe69JFo3obQ',
       // 所在省份
-      province: '广东',
+      province: '北京',
       // 所在城市
-      city: '肇庆',
+      city: '房山',
       // 新历生日, 仅用作获取星座运势, 格式必须
-      horoscopeDate: '12-27',
+      horoscopeDate: '05-23',
       // 获取什么时候的星座运势，可选：['今日', '明日', '本周', '本月', '今年'], 留空则随机
       horoscopeDateType: '今日',
       // 他点击详情后跳转的页面,你可以设置成微博的热榜，也可以设置成其他，网址一定要填对；不填对也没关系，随便你，会打不开而已。
-      openUrl: 'https://wangxinleo.cn',
+      openUrl: 'https://weibo.com',
       // 专属节日提醒，如果你在这里填写了节日提醒，就不会执行FESTIVALS的提醒了, 和FESTIVALS的配置方法相同，可以往下查看，我这里就不重复写了
       festivals: [
         // 注意：此条配置日期为阴历日期，因为`type`中 “生日” 之前有 * 符号
         {
-          type: '*生日', name: '老婆', year: '1996', date: '09-09',
+          type: '*生日', name: '小媳妇农历的生日', year: '2004', date: '0523',
         },
         {
-          type: '节日', name: '结婚纪念日', year: '2020', date: '09-03',
+          type: '节日', name: '纪念日', year: '2021', date: '08-25',
+        },
+        {
+          type: '*节日', name: '距离中秋节还有', year: '2020', date: '08-15',
+        },
+        {
+          type: '节日', name: '距离元旦还有', year: '2021', date: '01-01',
+        },
+        {
+          type: '*节日', name: '距离除夕还有', year: '2021', date: '12-31',
+        },
+        {
+          type: '节日', name: '距离情人节还有', year: '2021', date: '02-14',
         },
         // 注意：此条配置日期为阳历日期，因为`type`中 “生日” 之前没有 * 符号
         {
-          type: '生日', name: '李四', year: '1996', date: '09-31',
-        },
-        {
-          type: '节日', name: '被搭讪纪念日', year: '2021', date: '09-01',
+          type: '节日', name: '小媳妇阳历生日', year: '2004', date: '0523',
         }
       ],
       // 专属纪念日/倒数日，如果你在这里填写了纪念日/倒数日，就不会计算CUSTOMIZED_DATE_LIST的日子了, 和CUSTOMIZED_DATE_LIST的配置方法相同，可以往下查看，我这里就不重复写了
       customizedDateList: [
         // 在一起的日子
-        { keyword: 'love_day', date: '2022-09-08' },
-        // 结婚纪念日
-        { keyword: 'marry_day', date: '2022-09-09' },
-        // 退伍日
-        { keyword: 'ex_day', date: '2022-09-10' }
+        { keyword: 'love_day', date: '2021-08-25' },
+        {"keyword": "lover_prattle", contents: [
+        "因为太喜欢你，所以看谁都像是情敌。",
+        "申请成为你爱里的永久居民。",
+        "你很傻，你很笨，可我还是很羡慕你，因为你有我",
+        "遇见你，就好像捡到了100斤的运气",
+        "今天又比昨天多爱你多一点"
+      ]}
       ],
       // 课程表相关配置
       // 如果courseSchedule不存在或者为空（null）则认为没有课程
@@ -123,38 +135,57 @@ const USER_CONFIG = {
           odd: [
             // 例子，周一的课表
             [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
+              '08:00-08:40 美术',
+              '08:50-09:30 幼儿园教师职业伦理与道德',
+              '09:40-10:20 家庭与社区教育',
+              '10:40-11:20 家庭与社区教育'
             ],
             // 周二
             [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
+              '08:00-08:40 学前心理学',
+              '08:50-09:30 学前心理学',
+              '09:40-10:20 绘本阅读',
+              '10:40-11:20 绘本阅读',
+              '13:30-14:10 舞蹈欣赏',
+              '14:20-15:00 舞蹈欣赏',
+              '15:10-15:50 学前教育学',
+              '16:00-16:40 学前教育学',
+              '16:50-17:30 学前教育学'
             ],
             // 周三
             [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
+              '09:40-10:20 儿童文学',
+              '10:40-11:20 儿童文学',
+              '13:30-14:10 体育',
+              '14:20-15:00 体育',
+              '15:10-15:50 思想道德修养与法律基础',
+              '16:00-16:40 思想道德修养与法律基础',
+              '16:50-17:30 思想道德修养与法律基础'
             ],
             // 周四
             [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
+              '09:40-10:20 边弹边唱',
+              '10:40-11:20 声乐基础',
+              '11:30-12:10 幼儿舞蹈基础',
+              '13:30-14:10 大学生心理适应与发展',
+              '14:20-15:00 大学生心理适应与发展',
+              '15:10-15:50 大学生学业规划与发展',
+              '16:00-16:40 大学生学业规划与发展'
             ],
             // 周五
             [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
+              '10:40-11:20 大学语文',
+              '11:30-12:10 大学语文',
+              '16:50-17:30 形势与政策',
+              '18:30-19:10 形势与政策',
+              '19:20-20:00 形势与政策',
+              '20:00-20:50 形势与政策'
             ],
             // 周六
             [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
             ],
             // 周日
             [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
             ]
           ],
           // 双周课表
@@ -169,45 +200,6 @@ const USER_CONFIG = {
           ]
         }
       },
-    },
-    {
-      name: '老婆1',
-      id: '',
-      useTemplateId: '',
-      province: '',
-      city: '',
-      horoscopeDate: '',
-      horoscopeDateType: '',
-      openUrl: 'https://wangxinleo.cn',
-      festivals: [],
-      customizedDateList: [],
-      courseSchedule: null
-    },
-    {
-      name: '老婆2',
-      id: '',
-      useTemplateId: '',
-      province: '',
-      city: '',
-      horoscopeDate: '',
-      horoscopeDateType: '',
-      openUrl: 'https://wangxinleo.cn',
-      festivals: [],
-      customizedDateList: [],
-      courseSchedule: null
-    },
-    {
-      name: '老婆3',
-      id: '',
-      useTemplateId: '',
-      province: '',
-      city: '',
-      horoscopeDate: '',
-      horoscopeDateType: '',
-      openUrl: 'https://wangxinleo.cn',
-      festivals: [],
-      customizedDateList: [],
-      courseSchedule: null
     }
     // 你可以不断按格式往下增加
     // ...
@@ -218,7 +210,7 @@ const USER_CONFIG = {
    */
 
   // 【推送完成提醒】模板id, 用来看自己有没有发送成功的那个模板
-  CALLBACK_TEMPLATE_ID: '',
+  CALLBACK_TEMPLATE_ID: 'oDoGd56mLLw8k0DVojPXHH7JVTyM',
 
   // 接收成功回调消息的微信号，（一般来说只填自己的微信号, name填不填无所谓）
   CALLBACK_USERS: [
@@ -226,7 +218,7 @@ const USER_CONFIG = {
       // 一般都填自己
       name: '自己',
       // 自己的微信id，扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: '',
+      id: 'oDoGd56mLLw8k0DVojPXHH7JVTyM',
     }
     // 你可以不断按格式往下增加
     // ...
@@ -239,9 +231,9 @@ const USER_CONFIG = {
   /** 天气相关 */
 
   // 默认所在省份, USERS 中没填的话, 会默认拿这里的省份
-  PROVINCE: '广东',
+  PROVINCE: '北京',
   // 默认所在城市, USERS 中没填的话, 会默认拿这里的城市
-  CITY: '惠州',
+  CITY: '房山',
 
   /** 重要节日相关 */
 
@@ -286,7 +278,7 @@ const USER_CONFIG = {
    * 如果为3, 则仅展示“将要到达” 的3个重要节日提醒，剩下的将被忽略
    * 如果为0, 则默认展示全部
    */
-  FESTIVALS_LIMIT: 4,
+  FESTIVALS_LIMIT: 3,
 
   /** 日期相关 */
 
@@ -296,11 +288,7 @@ const USER_CONFIG = {
    * */
   CUSTOMIZED_DATE_LIST: [
     // 在一起的日子
-    { keyword: 'love_day', date: '2022-09-08' },
-    // 结婚纪念日
-    { keyword: 'marry_day', date: '2022-09-09' },
-    // 退伍日
-    { keyword: 'ex_day', date: '2022-09-10' }
+    { keyword: 'love_day', date: '2022-09-08' }
     // 你可以不断按格式往下增加
     // ...
   ],
